@@ -4,21 +4,23 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const boxesContainer = document.getElementById('boxes');
 
 function createBoxes(amount) {
-      const boxesContainer = document.getElementById('boxes');
-      for (let i = 0; i < amount; i++) {
-          const box = document.createElement('div');
-          const size = 30 + i * 10;
-          width = `${size}px`;
-          height = `${size}px`;
-          backgroundColor = getRandomHexColor();
-          boxesContainer.appendChild(box);
-      }
-  }
+    for (let i = 0; i < amount; i++) {
+        const box = document.createElement('div');
+        const size = 30 + i * 10;
+        box.style.width = `${size}px`;
+        box.style.height = `${size}px`;
+        box.style.backgroundColor = getRandomHexColor();
+        boxesContainer.appendChild(box);
+        
+    }
+
+}
 
   function destroyBoxes() {
-      const boxesContainer = document.getElementById('boxes');
+     
       boxesContainer.innerHTML = '';
   }
 
